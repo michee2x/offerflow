@@ -1,10 +1,17 @@
 import localFont from "next/font/local";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
 
 const offerFlowFont = localFont({
   src: "../public/fonts/offerflow.woff2",
   variable: "--font-offerflow",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -20,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${offerFlowFont.variable} antialiased`}
+        className={`${offerFlowFont.variable} ${dmSans.variable} antialiased`}
       >
         {children}
       </body>

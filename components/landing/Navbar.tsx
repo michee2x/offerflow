@@ -1,26 +1,34 @@
 import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-white/5 bg-black/80 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <div className="flex items-center gap-2">
-          <div className="h-6 w-6 rounded-full bg-[#00ffb2]" />
-          <span className="text-lg font-bold tracking-tight text-white">OfferFlow</span>
+    <header className="fixed top-0 z-50 w-full border-b border-white/5 bg-[#08070e]/80 backdrop-blur-md font-dm-sans">
+      <div className="mx-auto flex h-[88px] max-w-[1200px] items-center justify-between px-6">
+        <div className="flex items-center gap-3">
+          <div className="relative h-8 w-8">
+             <img src="/logo.svg" alt="Cryptix Logo" className="h-full w-full object-contain" />
+          </div>
+          <span className="text-[24px] font-medium tracking-tight text-[#f5f5f5]">Offerflow</span>
         </div>
         <nav className="hidden items-center gap-8 md:flex">
-          <Link href="#product" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Product</Link>
-          <Link href="#solutions" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Solutions</Link>
-          <Link href="#pricing" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Pricing</Link>
+          <Link href="#why" className="text-[16px] text-[#d5d5d5] hover:text-[#f5f5f5] transition-colors">Why Offerflow?</Link>
+          <Link href="#cryptos" className="text-[16px] text-[#d5d5d5] hover:text-[#f5f5f5] transition-colors">Features</Link>
+          <Link href="#howitworks" className="text-[16px] text-[#d5d5d5] hover:text-[#f5f5f5] transition-colors">How it works</Link>
+          <Link href="#testimonials" className="text-[16px] text-[#d5d5d5] hover:text-[#f5f5f5] transition-colors">Testimonials</Link>
+          <Link href="#faq" className="text-[16px] text-[#d5d5d5] hover:text-[#f5f5f5] transition-colors">FAQ</Link>
         </nav>
         <div className="flex items-center gap-4">
-          <Link href="/login" className="text-sm font-medium text-white hover:text-[#00ffb2] transition-colors">Log in</Link>
-          <Link
-            href="/dashboard"
-            className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/20"
+          <Button asChild variant="ghost" className="text-[16px] font-medium text-[#d5d5d5] hover:text-[#f5f5f5] hover:bg-transparent px-0">
+            <Link href="/login">Log in</Link>
+          </Button>
+          <Button
+            asChild
+            className="rounded-[48px] border border-white/10 bg-white/5 px-6 py-6 text-[16px] font-medium text-white transition-colors hover:bg-white/10"
           >
-            Get Started
-          </Link>
+            <Link href="/signup">Get Started</Link>
+          </Button>
         </div>
       </div>
     </header>

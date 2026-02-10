@@ -1,82 +1,88 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="relative px-6 pb-20 pt-32 text-center lg:pt-48 border-b border-white/5">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#00ffb2]/10 via-black to-black opacity-40 pointer-events-none" />
+    <section className="relative w-full min-h-screen bg-[#08070e] overflow-hidden flex flex-col items-center pt-32 pb-20 font-dm-sans">
+      {/* Background Gradients */}
+      {/* Top Center Green Gradient */}
+      <div className="absolute top-[-1px] left-0 right-0 h-[2px] bg-[radial-gradient(25%_25%_at_50%_50%,_#ffffff_0%,_#00ffb200_99.68%)] opacity-50 z-10 pointer-events-none mix-blend-screen" />
       
-      <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mb-8 inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-md">
-          <span className="flex h-2 w-2 rounded-full bg-[#00ffb2]"></span>
-          <span className="text-sm font-medium text-zinc-300">New: AI Funnel Strategist</span>
-        </div>
+      {/* Main Radial Glow */}
+      <div className="absolute top-[-430px] left-1/2 -translate-x-1/2 w-[666px] h-[614px] bg-[radial-gradient(50%_50%_at_50%_50%,_#00ffb2_0%,_#00ffb200_100%)] opacity-[0.15] pointer-events-none" />
 
-        <h1 className="bg-gradient-to-b from-white via-white to-zinc-400 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-7xl lg:leading-[1.1]">
-          Complete Funnel System <br /> from Your Offer Idea.
-        </h1>
-
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl">
-          Transform any digital offer into a complete lead generation and revenue funnel. <br className="hidden sm:block" />
-          The AI-native funnel strategist, copywriter, and designer in one.
-        </p>
-
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link
-            href="/dashboard"
-            className="group relative inline-flex h-12 items-center justify-center gap-2 overflow-hidden rounded-full bg-[#00ffb2] px-8 text-base font-semibold text-black transition-all hover:scale-105 hover:bg-[#00ffb2]/90 hover:shadow-[0_0_40px_-10px_rgba(0,255,178,0.5)]"
-          >
-            <span>Get started now</span>
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-          <button className="flex h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 text-sm font-semibold text-white transition-colors hover:bg-white/10">
-            View Demo
-          </button>
-        </div>
+      {/* Hero Content */}
+      <div className="relative z-10 w-full max-w-[1200px] px-6 mx-auto flex flex-col items-center">
+        {/* Navbar Placeholder / Spacing - Nav is technically separate but visually merged. 
+            The real nav would be fixed or sticky. We assume Navbar component handles that. 
+            Here is the main text content. */}
         
-        {/* Abstract Dashboard Visual with Grid Lines */}
-        <div className="mt-20 relative mx-auto max-w-5xl">
-            <div className="absolute -inset-1 bg-gradient-to-b from-[#00ffb2]/20 to-transparent opacity-20 blur-xl rounded-2xl pointer-events-none" />
-            <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#0a0a0a] shadow-2xl backdrop-blur-sm">
-                <div className="flex h-10 items-center border-b border-white/10 bg-white/5 px-4">
-                    <div className="flex gap-2">
-                        <div className="h-3 w-3 rounded-full bg-red-500/20 border border-red-500/50" />
-                        <div className="h-3 w-3 rounded-full bg-yellow-500/20 border border-yellow-500/50" />
-                        <div className="h-3 w-3 rounded-full bg-green-500/20 border border-green-500/50" />
-                    </div>
-                </div>
-                <div className="aspect-[16/9] w-full bg-[#050505] relative grid grid-cols-12 grid-rows-6 gap-px p-px">
-                  {/* Grid Background */}
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-                  
-                  {/* Mockup Elements */}
-                  <div className="col-span-3 row-span-6 bg-white/5 rounded-sm border border-white/5 p-4">
-                      <div className="h-4 w-24 bg-white/10 rounded mb-6"/>
-                      <div className="space-y-3">
-                          {[1,2,3,4,5].map(i => (
-                              <div key={i} className="h-8 w-full bg-white/5 rounded border border-white/5" />
-                          ))}
-                      </div>
-                  </div>
-                  <div className="col-span-9 row-span-6 p-6">
-                      <div className="flex justify-between items-end mb-8">
-                          <div>
-                             <div className="h-4 w-32 bg-white/10 rounded mb-2"/>
-                             <div className="h-8 w-64 bg-white/20 rounded"/>
-                          </div>
-                          <div className="h-10 w-32 bg-[#00ffb2]/20 border border-[#00ffb2]/30 rounded"/>
-                      </div>
-                      <div className="grid grid-cols-3 gap-4 mb-8">
-                          {[1,2,3].map(i => (
-                              <div key={i} className="h-24 bg-white/5 rounded border border-white/5"/>
-                          ))}
-                      </div>
-                      <div className="h-48 bg-white/5 rounded border border-white/5 w-full"/>
-                  </div>
-                </div>
+        <div className="mt-12 md:mt-24 flex flex-col items-center text-center animate-in fade-in slide-in-from-bottom-8 duration-1000">
+          <h1 className="text-[#f5f5f5] text-[40px] md:text-[64px] lg:text-[82px] leading-[48px] md:leading-[72px] lg:leading-[90px] font-normal tracking-tight max-w-[900px]">
+            Complete Funnel System
+from Your Offer Idea.
+          </h1>
+          
+          <p className="mt-6 md:mt-8 text-[#d5d5d5] text-[16px] md:text-[18px] leading-[26px] max-w-[600px] font-normal">
+           Transform any digital offer into a complete lead generation and revenue funnel.
+The AI-native funnel strategist, copywriter, and designer in one.
+          </p>
+
+          {/* CTA */}
+          <div className="mt-10 md:mt-12">
+            <Button 
+              asChild
+              className="inline-flex h-auto items-center justify-center bg-[#00ffb2] text-black px-10 py-5 rounded-[48px] font-medium text-[16px] hover:bg-[#00e6a0] transition-all duration-300 shadow-[0px_0px_34px_0px_rgba(42,240,124,0.3)] hover:shadow-[0px_0px_48px_0px_rgba(42,240,124,0.5)] active:scale-95"
+            >
+              <Link href="/signup">View Demo</Link>
+            </Button>
+          </div>
+
+          {/* Social Proof */}
+          <div className="mt-12 md:mt-16 flex flex-col items-center gap-3 opacity-80 hover:opacity-100 transition-opacity">
+            <div className="flex -space-x-2">
+               {/* Placeholders for avatars or use generated circles */}
+               {[1,2,3,4,5].map((i) => (
+                 <div key={i} className="w-8 h-8 rounded-full border border-[#08070e] bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm" />
+               ))}
             </div>
+            <div className="flex items-center gap-2 text-[#d5d5d5] text-sm">
+                <span className="italic">They trust us</span>
+                <span className="font-bold">4.9</span>
+                {/* Star icon */}
+                <svg className="w-4 h-4 text-[#00ffb2] fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+          </div>
         </div>
+
+        {/* Dashboard Image */}
+        <div className="relative z-10 mt-16 md:mt-24 w-full animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
+          <div className="relative w-full aspect-[2880/1770] bg-[#0d0c15] rounded-xl overflow-hidden border border-white/5 shadow-2xl">
+             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#08070e]/80 z-20" />
+             <Image 
+                src="/dashboard.png" 
+                alt="Cryptix Dashboard" 
+                fill 
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+             />
+             
+             {/* Glowing lines overlay simulation (simplified) */}
+             <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#00ffb2]/30 to-transparent z-20" />
+             <div className="absolute top-0 left-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-[#00ffb2]/10 to-transparent z-20" />
+          </div>
+          
+          {/* Bottom Gradient Glow behind Dashboard */}
+          <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[80%] h-[200px] bg-[#00ffb2] blur-[100px] opacity-10 -z-10" />
+        </div>
+
       </div>
+      
+      {/* Bottom Separator Gradient */}
+      <div className="absolute bottom-[-1px] left-1/2 -translate-x-1/2 w-[1184px] h-[2px] bg-[radial-gradient(25%_25%_at_50%_50%,_#00ffb2_0%,_#00ffb200_99.68%)] opacity-50 z-10 pointer-events-none" />
+
     </section>
   );
 }
