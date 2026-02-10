@@ -20,7 +20,7 @@ export function Navbar() {
           <Link href="#faq" className="text-[16px] text-[#d5d5d5] hover:text-[#f5f5f5] transition-colors">FAQ</Link>
         </nav>
         <div className="flex items-center gap-4">
-          <Button asChild variant="ghost" className="text-[16px] font-medium text-[#d5d5d5] hover:text-[#f5f5f5] hover:bg-transparent px-0">
+          <Button asChild variant="ghost" className="text-[16px] hidden lg:flex font-medium text-[#d5d5d5] hover:text-[#f5f5f5] hover:bg-transparent px-0">
             <Link href="/login">Log in</Link>
           </Button>
           <Button
