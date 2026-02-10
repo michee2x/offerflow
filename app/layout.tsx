@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import { Metadata } from "next";
 
 const offerFlowFont = localFont({
   src: "../public/fonts/offerflow.woff2",
