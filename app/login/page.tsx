@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Check, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export default function LoginPage() {
   return (
@@ -74,24 +76,20 @@ export default function LoginPage() {
 
             <form className="grid gap-4">
               <div className="grid gap-2">
-                <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-white" htmlFor="email">
-                  Email
-                </label>
-                <input
+                <Label htmlFor="email" className="text-white">Email</Label>
+                <Input
                   id="email"
                   placeholder="name@example.com"
                   type="email"
                   autoCapitalize="none"
                   autoComplete="email"
                   autoCorrect="off"
-                  className="flex h-11 w-full rounded-md border border-white/10 bg-black px-3 py-2 text-sm text-white ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00ffb2] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="bg-transparent border-white/10 text-white focus-visible:ring-[#00ffb2] h-11"
                 />
               </div>
               <div className="grid gap-2">
                 <div className="flex items-center justify-between">
-                    <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-white" htmlFor="password">
-                    Password
-                    </label>
+                    <Label htmlFor="password" className="text-white">Password</Label>
                     <Link
                     href="/forgot-password"
                     className="text-sm font-medium text-[#00ffb2] hover:underline"
@@ -100,13 +98,13 @@ export default function LoginPage() {
                     </Link>
                 </div>
                 <div className="relative">
-                    <input
+                    <Input
                     id="password"
                     placeholder="Enter your password"
                     type="password"
                     autoCapitalize="none"
                     autoComplete="current-password"
-                    className="flex h-11 w-full rounded-md border border-white/10 bg-black px-3 py-2 text-sm text-white ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00ffb2] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pr-10"
+                    className="bg-transparent border-white/10 text-white focus-visible:ring-[#00ffb2] h-11 pr-10"
                     />
                     <button type="button" className="absolute right-3 top-3 text-zinc-500 hover:text-white">
                         <Eye className="h-5 w-5" />
@@ -117,12 +115,12 @@ export default function LoginPage() {
               <div className="flex items-center gap-2">
                   <div className="flex items-center space-x-2">
                     <input type="checkbox" id="remember" className="h-4 w-4 rounded border-white/10 bg-black text-[#00ffb2] focus:ring-[#00ffb2]" />
-                    <label
+                    <Label
                         htmlFor="remember"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-zinc-400"
+                        className="text-zinc-400 font-normal"
                     >
                         Remember me
-                    </label>
+                    </Label>
                   </div>
               </div>
 
